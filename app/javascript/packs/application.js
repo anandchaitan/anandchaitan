@@ -7,6 +7,10 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import '../../../node_modules/chart.js/dist/chart.js';
+import '../../../node_modules/simple-datatables/src/datatable.js';
+import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
+
 
 Rails.start()
 Turbolinks.start()

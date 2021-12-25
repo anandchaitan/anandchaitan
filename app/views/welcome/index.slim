@@ -838,15 +838,7 @@ main
               td
                 | $112,000
 
-
-footer.py-4.bg-light.mt-auto
-  .container-fluid.px-4
-    .d-flex.align-items-center.justify-content-between.small
-      .text-muted
-        | Copyright © Your Website 2021
-      div
-        a[href="#"]
-          | Privacy Policy
-        |  · 
-        a[href="#"]
-          | Terms & Conditions
+= javascript_pack_tag 'main.js'
+= javascript_pack_tag 'chart-area.js'
+= javascript_pack_tag 'chart-bar.js'
+= javascript_pack_tag 'datatables.js'
