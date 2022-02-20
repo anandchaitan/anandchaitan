@@ -2,7 +2,7 @@
   "name": "divine-sky",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
  "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
