@@ -62,6 +62,8 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ancestry (4.1.0)
+      activerecord (>= 5.2.6)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.3)
@@ -79,6 +81,12 @@ GEM
       xpath (~> 3.2)
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
+    countries (4.1.2)
+      i18n_data (~> 0.15.0)
+      sixarm_ruby_unaccent (~> 1.1)
+    country_select (6.0.0)
+      countries (~> 4.0)
+      sort_alphabetical (~> 1.1)
     crass (1.0.6)
     devise (4.8.1)
       bcrypt (~> 3.0)
@@ -90,8 +98,18 @@ GEM
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    has_scope (0.8.0)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.15.0)
+      simple_po_parser (~> 1.1)
+    inherited_resources (1.13.0)
+      actionpack (>= 5.2, < 6.2)
+      has_scope (~> 0.6)
+      railties (>= 5.2, < 6.2)
+      responders (>= 2, < 4)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -177,6 +195,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
+    simple_po_parser (1.1.5)
+    sixarm_ruby_unaccent (1.2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -184,6 +207,8 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 5.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (4.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -200,6 +225,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode_utils (1.4.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -227,10 +253,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  ancestry
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  country_select
   devise
+  inherited_resources
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
@@ -240,6 +269,7 @@ DEPENDENCIES
   rolify
   sass-rails (>= 6)
   selenium-webdriver
+  simple_form
   slim-rails
   spring
   turbolinks (~> 5)

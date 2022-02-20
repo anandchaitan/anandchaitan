@@ -1,0 +1,20 @@
+require 'csv'
+
+class Customer < ApplicationRecord
+
+  validates_presence_of :full_name
+
+  has_many :orders
+
+  def full_address
+    "#{address_line_1} #{city} #{state} #{country} #{zipcode}"
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
+      Customer.where(email: row[3]).find_or_create_by(row.to_hash)
+    end
+  end
+
+end
+

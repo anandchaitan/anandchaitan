@@ -9,8 +9,8 @@ default: &default
 
 development:
   <<: *default
-  database: divine_sky_development
+  database: divinesky_development
 
 test:
   <<: *default
-  database: divine_sky_test
+  database: divinesky_test

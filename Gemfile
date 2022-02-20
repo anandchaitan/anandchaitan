@@ -58,3 +58,7 @@ gem 'slim-rails'
 
 gem 'devise'
 gem 'rolify'
+gem 'inherited_resources'
+gem 'simple_form'
+gem 'country_select' 
+gem 'ancestry'

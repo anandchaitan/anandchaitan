@@ -3,15 +3,21 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+
 import '../../../node_modules/chart.js/dist/chart.js';
-import '../../../node_modules/simple-datatables/src/datatable.js';
 import '../../../node_modules/bootstrap/dist/js/bootstrap.js';
 
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require('datatables.net-bs4')
+require("@popperjs/core")
+require("bootstrap")
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
+
+$(document).ready(function() {
+  $('table').DataTable();
+});
