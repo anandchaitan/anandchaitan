@@ -1,7 +1,10 @@
 {
   "name": "divine-sky",
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "start": "node server.js"
+  },
+ "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.11.2",
     "@rails/actioncable": "^6.0.0",
