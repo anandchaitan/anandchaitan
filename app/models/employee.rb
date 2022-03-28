@@ -8,4 +8,10 @@ class Employee < ApplicationRecord
 
   validates_presence_of :full_name
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
+      Employee.create(row.to_hash)
+    end
+  end
+
 end

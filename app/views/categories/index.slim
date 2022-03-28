@@ -12,8 +12,6 @@ main
     .col-sm-2.mt-5
       button.btn.btn-primary[type="button" data-bs-toggle="modal" data-bs-target="#upload_modal"] Upload
 
-    
-
     .card.mb-4
       .card-header
         i.fas.fa-table.me-1
@@ -37,3 +35,4 @@ main
                   = link_to 'Delete', category_path(category), method: :delete, class: 'text-decoration-none'
                   = link_to 'Edit', edit_category_path(category), class: 'ml-15 text-decoration-none'
 
+= render 'upload_category_modal'

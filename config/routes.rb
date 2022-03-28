@@ -10,12 +10,38 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :steps
-  resources :departments
+  resources :steps do
+    collection do
+      post :import
+    end
+  end
+  
+  resources :departments do
+    collection do
+      post :import
+    end
+  end
+  
   resources :roles
-  resources :employees
-  resources :categories
-  resources :products
+
+  resources :employees do
+    collection do
+      post :import
+    end
+  end
+
+  resources :categories do
+    collection do
+      post :import
+    end
+  end
+
+  resources :products do
+    collection do
+      post :import
+    end
+  end
+
   resources :orders
 
 end
