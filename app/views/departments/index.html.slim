@@ -9,14 +9,12 @@ main
             | Home -> Departments
 
     .col-sm-1.mt-5= link_to "New", new_department_path, class: 'btn btn-primary'
-    .col-sm-2.mt-5
+    .col-sm-1.mt-5
       button.btn.btn-primary[type="button" data-bs-toggle="modal" data-bs-target="#upload_modal"] Upload
+    .col-sm-1.mt-5= link_to "Download", departments_path(format: "csv"),  class: 'btn btn-primary'
 
 
     .card.mb-4
-      .card-header
-        i.fas.fa-table.me-1
-        |
       .card-body
         table.table-striped.table-bordered.table
           thead
