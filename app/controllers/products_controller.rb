@@ -1,4 +1,12 @@
 class ProductsController < InheritedResources::Base
+  
+  def index
+    @products = Product.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @products.to_csv}
+    end
+  end
 
   def create
     create!(:notice => "Great! Product has updated successfully.") { products_url }

@@ -14,4 +14,12 @@ class Employee < ApplicationRecord
     end
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << ["Full Name", "Email", "Department", "Role" ]
+      all.each do |employee|
+        csv << [employee.full_name, employee.email, employee.department.title, employee.role.title ]
+      end
+    end
+  end
 end

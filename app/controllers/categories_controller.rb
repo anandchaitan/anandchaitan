@@ -1,5 +1,13 @@
 class CategoriesController < InheritedResources::Base
   
+  def index
+    @categories = Category.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @categories.to_csv}
+    end
+  end
+
   def create
     create!(:notice => "Great! Category has created successfully.") { categories_url }
   end

@@ -8,4 +8,13 @@ class Step < ApplicationRecord
       Step.create(row.to_hash)
     end
   end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << ["Title", "Description"]
+      all.each do |step|
+        csv << [step.title, step.description]
+      end
+    end
+  end
 end

@@ -10,4 +10,13 @@ class Category < ApplicationRecord
       Category.create(row.to_hash)
     end
   end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << ["Title", "Description"]
+      all.each do |category|
+        csv << [category.title, category.description]
+      end
+    end
+  end
 end

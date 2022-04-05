@@ -16,5 +16,13 @@ class Customer < ApplicationRecord
     end
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << ["Full Name", "Email", "Mobile", "Full Address", "PAN Number"]
+      all.each do |customer|
+        csv << [customer.full_name, customer.email, customer.mobile, customer.full_address, customer.pan_number]
+      end
+    end
+  end
 end
 
