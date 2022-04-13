@@ -44,7 +44,7 @@ main
                   tbody
                     - @orders.each do |order|
                       tr
-                        td= order.customer.full_name
+                        td= order.customer.try(:full_name)
                         td= order.status
                         td= order.order_date
                         td= order.products.map(&:title)
